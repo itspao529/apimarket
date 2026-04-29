@@ -1,6 +1,5 @@
 import { pool } from "../db.js";
 
-// 🔍 OBTENER TODOS LOS PRODUCTOS
 export const getProductos = async (req, res) => {
   try {
     const [rows] = await pool.query("SELECT * FROM productos");
@@ -11,7 +10,6 @@ export const getProductos = async (req, res) => {
   }
 };
 
-// 🔍 OBTENER UN PRODUCTO POR ID
 export const getProducto = async (req, res) => {
   try {
     const { id } = req.params;
@@ -32,7 +30,6 @@ export const getProducto = async (req, res) => {
   }
 };
 
-// ➕ INSERTAR PRODUCTO
 export const postProductos = async (req, res) => {
   try {
     const { name, description, price_cost, price_sale, quantity, image } = req.body;
@@ -53,7 +50,6 @@ export const postProductos = async (req, res) => {
   }
 };
 
-// ✏️ ACTUALIZAR PRODUCTO
 export const putProductos = async (req, res) => {
   try {
     const { id } = req.params;
@@ -78,7 +74,6 @@ export const putProductos = async (req, res) => {
   }
 };
 
-// ❌ ELIMINAR PRODUCTO
 export const deleteProductos = async (req, res) => {
   try {
     const { id } = req.params;
